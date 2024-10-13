@@ -1,0 +1,14 @@
+pped_data(const std::string& filename, const std::vector<Pixel>& pixel_list) {
+    std::ofstream file(filename);
+    if (!file) {
+        std::cerr << "Error: Cannot open file " << filename << std::endl;
+        return;
+    }
+
+    for (const auto& pixel : pixel_list) {
+        file << pixel.x << "," << pixel.y << ","
+             << pixel.r << "," << pixel.g << "," << pixel.b << "\n";
+    }
+
+    file.close();
+`
